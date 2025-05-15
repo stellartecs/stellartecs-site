@@ -1,31 +1,41 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+document.addEventListener("DOMContentLoaded", () => {
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
   });
-  const hiddenElements = document.querySelectorAll('.hidden');
-  hiddenElements.forEach((el) => observer.observe(el));
-});
-// Smooth scroll to top when clicking the arrow
-document.querySelector('.scroll-top-arrow').addEventListener('click', function(event) {
-  event.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-// Change navbar color on scroll
-window.onscroll = function() {
-  scrollFunction()
-};
+  document.querySelectorAll('.hidden').forEach(el => io.observe(el));
 
-function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.querySelector(".navbar").style.backgroundColor = "#000";
-  } else {
-    document.querySelector(".navbar").style.backgroundColor = "transparent";
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const targetEl = document.querySelector(link.hash);
+      if (!targetEl) return;
+
+      e.preventDefault();
+      targetEl.scrollIntoView({behavior: 'smooth'});
+
+      setTimeout(() =>
+        history.replaceState(null, '', location.pathname + location.search),
+        50
+      );
+    });
+  });
+
+  const arrow = document.querySelector('.scroll-top-arrow');
+  if (arrow) {
+    arrow.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
   }
-}
+
+  const navbar = document.querySelector('.navbar');
+  function tintNavbar() {
+    const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+    navbar.style.backgroundColor = scrolled > 50 ? '#000' : 'transparent';
+  }
+  tintNavbar();
+  window.addEventListener('scroll', tintNavbar);
+
+});

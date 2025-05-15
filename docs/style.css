@@ -11,6 +11,10 @@ body {
   margin: 4% 0%;
 }
 
+.container {
+  max-width: 1600px;
+}
+
 .marketing .col-lg-4 {
   text-align: center;
 }
@@ -106,6 +110,10 @@ a.email-link:hover {
   border-color: #343a40;
 }
 
+.coming-soon {
+  background-color: #343a40;
+}
+
 .btn-navbar {
   margin-right: 20px;
 }
@@ -148,6 +156,38 @@ main {
   margin-top: 100px;
 }
 
+#myBanner{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 1rem;
+  background: url('blue_particles.png') center/cover no-repeat;
+  position:relative;
+}
+
+#myBanner::before{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.35);
+}
+
+#banner-content{ position:relative; z-index:1; }
+
+
+#banner-content h1 {
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:700;
+}
+
+#banner-content p {
+  max-width:40rem;
+  margin-inline:auto;
+}
+
+/*
+
 #myBanner {
   background-image: url('blue_particles.png');
   background-size: cover;
@@ -160,6 +200,7 @@ main {
   padding: 6% 8%;
   margin: 0 auto;
 }
+*/
 
 @media only screen and (min-width : 1000px) {
   #banner-content {
@@ -201,12 +242,12 @@ a[href="#contact"] {
     text-decoration: none !important;
 }
 
-.banner-title-font {
+.banner-title {
   font-size:x-large;
 }
 
 .section-p {
-  font-size: large;
+  font-size: 20px;
 }
 
 .nav-item {
@@ -216,4 +257,86 @@ a[href="#contact"] {
 .logo-container {
   display: flex;
   justify-content: center;
+}
+
+.card-img-top.nesherai {
+  object-fit:contain;
+  height:250px
+}
+.card-img-top.cyberbird {
+  object-fit:contain;
+  height:250px
+}
+
+.card-img-top.shomer {
+  object-fit:contain;
+  height:225px
+}
+
+.card-title {
+  font-weight:600;
+}
+
+.card-body {
+  padding: 30px;
+  font-size: 18px;
+}
+
+.card.nesherai { 
+  background:#000000;
+  color:#ffffff;
+}
+
+.card.nesherai:hover { 
+  background:#343a40;
+}
+
+.card.nesherai a {
+  background-color: #000000; 
+  border: 1px solid #ffffff;
+}
+
+.card.nesherai a:hover {
+  background-color: #00a6fb; 
+  border: 1px solid #ffffff;
+}
+
+.card.cyberbird {
+  background:#000000;
+  color:#ffffff;
+}
+
+.card.cyberbird:hover { 
+  background:#343a40;
+}
+
+.card.shomer {
+  background:#000000;
+  color:#ffffff;
+}
+
+.card.shomer:hover { 
+  background:#343a40;
+}
+
+.card.contact {
+  background:#000000;
+  color:#ffffff;
+}
+
+#about-us img {
+  border-radius: 7px;
+  border: 1px solid #ffffff;
+}
+
+#about-us img:hover {
+  background-color: #343a40;
+}
+
+.card-icon {
+  text-align: center;
+}
+
+.contact-btn {
+  width: 100px;
 }
