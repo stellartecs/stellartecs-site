@@ -1,0 +1,170 @@
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  transition: color 0.15s ease;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.section-title {
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.navbar {
+  background: transparent;
+  color: #ffffff;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.navbar.scrolled {
+  background: #000000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+.navbar-brand img {
+  height: 70px;
+}
+
+.btn-navbar {
+  border-radius: 0;
+  background: transparent;
+  border: 1px solid #ffffff;
+}
+
+.btn-navbar:hover {
+  background: #00a6fb;
+  border: 1px solid #ffffff;
+  text-decoration: none !important;
+}
+
+.btn-disabled, .btn-disabled:hover {
+  border-radius: 0;
+  background: transparent !important;
+  border: 1px solid #ffffff !important;
+  text-decoration: none !important;
+}
+
+.navbar a {
+  color: #ffffff;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+.text-blue {
+  color: #39ace7;
+}
+
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+#hero .swiper {
+  height: 100%;
+}
+#hero .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+#hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+#hero .slide-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+#hero h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+#hero p.lead {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  max-width: 45rem;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #ffffff;
+}
+
+
+.card-product,
+.card-feature {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  transition: transform 0.2s ease;
+}
+
+.card-product:hover,
+.card-feature:hover {
+  transform: translateY(-4px);
+}
+
+.card-product .card-icon {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+.card-feature .card-body ul {
+  padding-left: 1.2rem;
+}
+.card-feature .card-body ul li::marker {
+  color: #ffffff;
+}
+
+.snapshot {
+}
+
+.timeline-item {
+  border-left: 4px solid #ffffff;
+  padding-left: 1.25rem;
+  margin-left: 0.25rem;
+}
+.timeline-item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.timeline-item img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid #ffffff;
+  border-radius: 0.5rem;
+}
+
+footer {
+  background: #000;
+  color: #ccc;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.text-muted {
+  color: #ffffff !important;
+}
